@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+    </script>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0"/>
+    <meta charset="utf-8"/>
+    <style>
+      #maps {
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="maps"></div>
+    <script>
+      function initMap() {
+        var locations = [
+          {"lat": 32.776664, "lng": -96.796988},
+          {"lat": 32.7493946, "lng": -96.9114570}
+        ];
+        for (var i = 0; i < locations.length; i++) {
+          var divId = "map-" + i;
+          $( "#maps" ).append("<div id='" + divId + "' style='height: 100%; width: 100%; margin:5px'></div>");
+          var map = new google.maps.Map($('#' + divId)[0], {
+            center: {lat: locations[i].lat, lng: locations[i].lng},
+            zoom: 20
+          });
+        }
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGYPwF8XAyOpgrmTvWFNH6ytOgavpPBnA&callback=initMap" async defer></script>
+  </body>
+</html>

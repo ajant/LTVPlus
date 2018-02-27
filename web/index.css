@@ -1,0 +1,26 @@
+#maps {
+    width: 500px;
+    height: 500px;
+    margin: 50px auto;
+    position: relative;
+    padding: 10px;
+}
+
+#maps > div {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+}
+
+.map-div, .map-slide {
+    height: 100%;
+    width: 100%;
+    margin: 5px
+}
+
+.map-slide {
+    position: absolute;
+    display: none;
+}
